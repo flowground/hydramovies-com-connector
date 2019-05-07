@@ -1,0 +1,15 @@
+{
+    "name": "hydramovies-com-connector",
+    "version": "1.1.0",
+    "description": "Hydra Movies is a streaming service that holds information on thousands of popular movies. \n\nThe Hydra Movies API gives you access to [their entire collection of full movies.](https://hydramovies.com)\n\nEach film returned provides you with the following data:\n\n- Movie Title\n- Movie Release Year\n- Genre\n- Movie Summary\n- Movie Poster\n- IMDB ID\n- IMDB Rating\n- Runtime\n- Language\n- YouTube trailer",
+    "main": "component.json",
+    "dependencies": {
+        "elasticio-node": "0.0.9",
+        "elasticio-sailor-nodejs": "^2.2.1",
+        "swagger-client": "^3.8.22"
+    },
+    "author": {
+        "name": "Deutsche Telekom AG"
+    },
+    "license": "Apache-2.0"
+}

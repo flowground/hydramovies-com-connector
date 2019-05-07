@@ -1,0 +1,9 @@
+{
+    "type": "object",
+    "properties": {
+        "MovieYear": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

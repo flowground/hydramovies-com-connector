@@ -1,0 +1,68 @@
+{
+    "title": "Hydra Movies",
+    "description": "Hydra Movies is a streaming service that holds information on thousands of popular movies. \n\nThe Hydra Movies API gives you access to [their entire collection of full movies.](https://hydramovies.com)\n\nEach film returned provides you with the following data:\n\n- Movie Title\n- Movie Release Year\n- Genre\n- Movie Summary\n- Movie Poster\n- IMDB ID\n- IMDB Rating\n- Runtime\n- Language\n- YouTube trailer",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/hydramovies.com/1.1/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://hydramovies.com/api-v2/%3Fsource=http:/hydramovies.com/api-v2",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "CurrentMovieDataCsvGet": {
+            "main": "./lib/actions/CurrentMovieDataCsvGet.js",
+            "title": "getMovieByIMDBid",
+            "description": "Returns a movie using the films unique IMDB identifier",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CurrentMovieDataCsvGet.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CurrentMovieDataCsvGet2": {
+            "main": "./lib/actions/CurrentMovieDataCsvGet2.js",
+            "title": "getMovieByYear",
+            "description": "Returns a movie based on the year of its release",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CurrentMovieDataCsvGet2.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}
